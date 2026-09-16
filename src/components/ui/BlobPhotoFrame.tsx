@@ -11,7 +11,7 @@ interface BlobPhotoFrameProps {
 }
 
 export const BlobPhotoFrame: React.FC<BlobPhotoFrameProps> = ({
-  imageSrc = "/images/profile.svg",
+  imageSrc = "/images/profile.webp",
   className = "",
 }) => {
   const [imageError, setImageError] = useState(false);
