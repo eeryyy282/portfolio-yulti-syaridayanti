@@ -19,8 +19,24 @@ const quicksand = Quicksand({
   weight: ["500", "600", "700"],
 });
 
+const getSiteUrl = () => {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    const url = process.env.NEXT_PUBLIC_SITE_URL;
+    return url.startsWith("http") ? url : `https://${url}`;
+  }
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "https://portfolio-yulti-syaridayanti.vercel.app";
+};
+
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-yulti-syaridayanti.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: siteContent.metadata.title,
   description: siteContent.metadata.description,
   keywords: siteContent.metadata.keywords,
@@ -29,15 +45,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://portfolio-yulti-syaridayanti.vercel.app",
+    url: siteUrl,
     title: siteContent.metadata.ogTitle,
     description: siteContent.metadata.ogDescription,
     siteName: siteContent.metadata.title,
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: `${siteContent.hero.fullName} - ${siteContent.hero.degree}`,
       },
     ],
@@ -46,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteContent.metadata.title,
     description: siteContent.metadata.description,
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
   icons: {
     icon: "/favicon.svg",
