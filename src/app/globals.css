@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFDFB;
+  --foreground: #1E293B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #FCD5E1;
+  color: #B81C4B;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF5F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F47FA4;
+  border-radius: 9999px;
+  border: 2px solid #FFF5F7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #EC4E80;
+}
+
+@keyframes blob-morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 40% 60% 70% 30% / 50% 60% 30% 70%;
+  }
+}
+
+.animate-blob {
+  animation: blob-morph 8s ease-in-out infinite;
+}
+
+@keyframes soft-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-soft-float {
+  animation: soft-float 4s ease-in-out infinite;
+}
+
+@keyframes heartbeat-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.06);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.08);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.hover-heartbeat:hover {
+  animation: heartbeat-pulse 1.2s ease-in-out infinite;
+}
+
+.glass-nav {
+  background: rgba(255, 253, 251, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
