@@ -9,9 +9,11 @@ import {
   ShieldCheck,
   TrendingUp,
 } from "lucide-react";
-import { projects } from "@/data/portfolio-data";
+import { siteContent } from "@/content";
 
 export const ProjectsSection: React.FC = () => {
+  const { projects } = siteContent;
+
   const getProjectIcon = (id: string) => {
     switch (id) {
       case "pemberdayaan-sad":
@@ -31,18 +33,18 @@ export const ProjectsSection: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-pink-100 text-pastel-pink-700 text-xs font-bold mb-3">
             <FolderHeart className="w-3.5 h-3.5" />
-            <span>Inisiatif Nyata & Dampak Komunitas</span>
+            <span>{projects.badge}</span>
           </div>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-pastel-slate-900 tracking-tight mb-3">
-            Proyek & Program Unggulan
+            {projects.title}
           </h2>
           <p className="text-sm sm:text-base text-pastel-slate-600">
-            Karya inovatif yang mengintegrasikan advokasi kultural, kepemimpinan promosi kesehatan, dan intervensi berbasis data.
+            {projects.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((proj, idx) => {
+          {projects.items.map((proj, idx) => {
             const Icon = getProjectIcon(proj.id);
             return (
               <motion.div

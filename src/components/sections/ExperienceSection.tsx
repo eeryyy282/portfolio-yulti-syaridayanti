@@ -10,22 +10,24 @@ import {
   Building2,
   Sparkles,
 } from "lucide-react";
-import { experiences } from "@/data/portfolio-data";
+import { siteContent } from "@/content";
 
 export const ExperienceSection: React.FC = () => {
+  const { experience } = siteContent;
+
   return (
     <section id="experience" className="py-20 relative bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-pink-100 text-pastel-pink-700 text-xs font-bold mb-3">
             <Briefcase className="w-3.5 h-3.5" />
-            <span>Rekam Jejak Profesional</span>
+            <span>{experience.badge}</span>
           </div>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-pastel-slate-900 tracking-tight mb-3">
-            Pengalaman Kerja & Lapangan
+            {experience.title}
           </h2>
           <p className="text-sm sm:text-base text-pastel-slate-600">
-            Kiprah nyata di fasilitas pelayanan kesehatan primer dan instansi kependudukan dalam merancang intervensi kesehatan berbasis bukti.
+            {experience.subtitle}
           </p>
         </div>
 
@@ -36,7 +38,7 @@ export const ExperienceSection: React.FC = () => {
           />
 
           <div className="space-y-12">
-            {experiences.map((exp, idx) => {
+            {experience.items.map((exp, idx) => {
               const isEven = idx % 2 === 0;
               return (
                 <div

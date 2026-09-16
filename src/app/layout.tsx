@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { siteContent } from "@/content";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -20,47 +21,31 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-yulti-syaridayanti.vercel.app"),
-  title: "Yulti Syaridayanti | Portofolio Sarjana Kesehatan Masyarakat",
-  description:
-    "Portofolio profesional Yulti Syaridayanti, S.K.M. Sarjana Kesehatan Masyarakat lulusan Cumlaude (IPK 3.86) Universitas Jambi yang berfokus pada promosi kesehatan, pemberdayaan masyarakat, dan advokasi komunitas adat.",
-  keywords: [
-    "Yulti Syaridayanti",
-    "Kesehatan Masyarakat",
-    "Promosi Kesehatan",
-    "Ilmu Perilaku",
-    "S.K.M.",
-    "Universitas Jambi",
-    "Puskesmas Tarutung",
-    "Puskesmas Rawasari",
-    "Suku Anak Dalam",
-    "Advokasi Komunitas Adat",
-    "KECAPI TB",
-    "Portofolio SKM",
-  ],
-  authors: [{ name: "Yulti Syaridayanti, S.K.M." }],
-  creator: "Yulti Syaridayanti",
+  title: siteContent.metadata.title,
+  description: siteContent.metadata.description,
+  keywords: siteContent.metadata.keywords,
+  authors: [{ name: `${siteContent.hero.fullName}, ${siteContent.hero.degree}` }],
+  creator: siteContent.hero.fullName,
   openGraph: {
     type: "website",
     locale: "id_ID",
     url: "https://portfolio-yulti-syaridayanti.vercel.app",
-    title: "Yulti Syaridayanti, S.K.M. | Portofolio Promosi Kesehatan & Advokasi Komunitas",
-    description:
-      "Portofolio profesional Yulti Syaridayanti, Sarjana Kesehatan Masyarakat Universitas Jambi (Cumlaude 3.86) berfokus pada promosi kesehatan, edukasi visual, dan advokasi komunitas adat.",
-    siteName: "Portofolio Yulti Syaridayanti",
+    title: siteContent.metadata.ogTitle,
+    description: siteContent.metadata.ogDescription,
+    siteName: siteContent.metadata.title,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Yulti Syaridayanti - Sarjana Kesehatan Masyarakat",
+        alt: `${siteContent.hero.fullName} - ${siteContent.hero.degree}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yulti Syaridayanti | Portofolio Sarjana Kesehatan Masyarakat",
-    description:
-      "Portofolio profesional Yulti Syaridayanti, Sarjana Kesehatan Masyarakat yang berfokus pada promosi kesehatan, pemberdayaan masyarakat, dan advokasi komunitas.",
+    title: siteContent.metadata.title,
+    description: siteContent.metadata.description,
     images: ["/og-image.png"],
   },
   icons: {

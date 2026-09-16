@@ -10,34 +10,14 @@ import {
   Presentation,
   Stethoscope,
 } from "lucide-react";
-import { personalData, educationData } from "@/data/portfolio-data";
+import { siteContent } from "@/content";
 import { StorysetHealthIllustration } from "@/components/ui/StorysetHealthIllustration";
 import { HeartbeatLine } from "@/components/ui/HeartbeatLine";
 
 export const AboutSection: React.FC = () => {
-  const pillars = [
-    {
-      icon: Presentation,
-      title: "Promosi & Edukasi Visual Adaptif",
-      desc: "Merancang instrumen komunikasi perubahan perilaku (leaflet, flipchart, video, poster) yang disesuaikan dengan konteks budaya masyarakat lokal agar pesan kesehatan mudah dipahami dan dipraktikkan.",
-      tag: "Komunikasi Perilaku",
-      color: "pink",
-    },
-    {
-      icon: Users2,
-      title: "Advokasi Kultural & Komunitas Adat",
-      desc: "Berpengalaman langsung mendampingi komunitas adat Suku Anak Dalam (SAD) dengan pendekatan sosio-kultural dan metode bermain untuk menembus resistensi serta meluruskan mitos lokal terkait pengobatan medis.",
-      tag: "Pemberdayaan Khusus",
-      color: "mint",
-    },
-    {
-      icon: Stethoscope,
-      title: "Integrasi Data & Penguatan Faskes",
-      desc: "Mengoptimalkan pencatatan program kesehatan puskesmas (seperti CKG & KECAPI TB), surveilans klaster penyakit, serta perumusan POA (Planning of Action) berbasis indikator epidemiologi.",
-      tag: "Sistem Kesehatan",
-      color: "rose",
-    },
-  ];
+  const { about } = siteContent;
+
+  const pillarIcons = [Presentation, Users2, Stethoscope];
 
   return (
     <section id="about" className="py-20 relative bg-pastel-cream-50/70 overflow-hidden">
@@ -45,13 +25,13 @@ export const AboutSection: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-pink-100 text-pastel-pink-700 text-xs font-bold mb-3">
             <HeartHandshake className="w-3.5 h-3.5" />
-            <span>Dedikasi & Visi Profesi</span>
+            <span>{about.badge}</span>
           </div>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-pastel-slate-900 tracking-tight mb-3">
-            Tentang Yulti Syaridayanti
+            {about.title}
           </h2>
           <p className="text-sm sm:text-base text-pastel-slate-600">
-            Mendedikasikan ilmu kesehatan masyarakat untuk menjembatani kesenjangan informasi kesehatan, memberdayakan komunitas, dan menguatkan layanan promotif-preventif.
+            {about.subtitle}
           </p>
         </div>
 
@@ -67,7 +47,7 @@ export const AboutSection: React.FC = () => {
               <StorysetHealthIllustration className="w-full max-w-sm h-auto" />
               <div className="p-3 bg-pastel-pink-50/80 rounded-2xl border border-pastel-pink-100 text-center">
                 <span className="text-xs font-bold text-pastel-slate-800">
-                  Edukasi Partisipatif & Pelayanan Berbasis Empati
+                  {about.illustrationCaption}
                 </span>
               </div>
             </div>
@@ -87,24 +67,20 @@ export const AboutSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-lg sm:text-xl text-pastel-slate-900">
-                    Visi Pengabdian & Karir
+                    {about.visionTitle}
                   </h3>
                   <p className="text-xs font-semibold text-pastel-pink-600">
-                    Pemerataan Layanan Kesehatan Primer
+                    {about.visionSubtitle}
                   </p>
                 </div>
               </div>
 
               <p className="text-sm sm:text-base text-pastel-slate-700 leading-relaxed mb-4">
-                {personalData.bio}
+                {about.bioNarrative}
               </p>
 
               <p className="text-sm sm:text-base text-pastel-slate-700 leading-relaxed mb-6">
-                Bagi saya, promosi kesehatan bukan sekadar membagikan pamflet informasi, melainkan{" "}
-                <strong className="text-pastel-slate-900 font-bold">
-                  membangun dialog bermakna dengan masyarakat
-                </strong>
-                . Mulai dari mengedukasi warga agar tidak terjebak mitos pengobatan TB ke dukun hingga menciptakan ruang belajar interaktif bagi anak-anak Suku Anak Dalam, pendekatan berbasis empati dan budaya lokal adalah kunci transformasi perilaku hidup sehat.
+                {about.approachNarrative}
               </p>
 
               <div className="p-4 rounded-2xl bg-gradient-to-r from-pastel-pink-50 to-pastel-rose-50/60 border border-pastel-pink-200/70">
@@ -112,10 +88,13 @@ export const AboutSection: React.FC = () => {
                   <GraduationCap className="w-5 h-5 text-pastel-pink-600 mt-0.5 flex-shrink-0" />
                   <div className="text-xs sm:text-sm text-pastel-slate-700">
                     <span className="font-bold text-pastel-slate-900">
-                      {educationData.institution}
+                      {about.educationSummary.institution}
                     </span>{" "}
-                    — {educationData.degree} ({educationData.predicate}). Telah mempublikasikan karya ilmiah terakreditasi{" "}
-                    <span className="font-bold text-pastel-pink-600">Sinta 3</span>.
+                    — {about.educationSummary.degree} ({about.educationSummary.predicate}). {about.educationSummary.publicationPrefix}{" "}
+                    <span className="font-bold text-pastel-pink-600">
+                      {about.educationSummary.publicationHighlight}
+                    </span>
+                    .
                   </div>
                 </div>
               </div>
@@ -124,7 +103,7 @@ export const AboutSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-          {personalData.stats.map((stat, idx) => (
+          {about.stats.map((stat, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 15 }}
@@ -147,8 +126,8 @@ export const AboutSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {pillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
+          {about.pillars.map((pillar, idx) => {
+            const Icon = pillarIcons[idx % pillarIcons.length];
             return (
               <motion.div
                 key={idx}

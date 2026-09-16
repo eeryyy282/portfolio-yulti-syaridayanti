@@ -14,9 +14,11 @@ import {
   Medal,
   CheckCircle,
 } from "lucide-react";
-import { skillCategories, certificationsAndAwards } from "@/data/portfolio-data";
+import { siteContent } from "@/content";
 
 export const SkillsSection: React.FC = () => {
+  const { skills } = siteContent;
+
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case "Megaphone":
@@ -53,18 +55,18 @@ export const SkillsSection: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-pink-100 text-pastel-pink-700 text-xs font-bold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Kompetensi & Apresiasi</span>
+            <span>{skills.badge}</span>
           </div>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-pastel-slate-900 tracking-tight mb-3">
-            Keahlian Teknis & Prestasi
+            {skills.title}
           </h2>
           <p className="text-sm sm:text-base text-pastel-slate-600">
-            Perpaduan kompetensi sains kesehatan masyarakat terapan, kemampuan komunikasi publik, serta pencapaian akademis teruji.
+            {skills.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {skillCategories.map((cat, idx) => {
+          {skills.categories.map((cat, idx) => {
             const Icon = getCategoryIcon(cat.iconName);
             return (
               <motion.div
@@ -99,15 +101,15 @@ export const SkillsSection: React.FC = () => {
         <div className="bg-gradient-to-tr from-pastel-pink-100/70 via-pastel-rose-50/60 to-pastel-cream-100/70 p-6 sm:p-10 rounded-3xl border border-pastel-pink-200 shadow-sm">
           <div className="max-w-xl mx-auto text-center mb-8">
             <span className="text-xs font-bold text-pastel-pink-600 uppercase tracking-wider">
-              Rekognisi & Validasi Formal
+              {skills.awardsHeaderBadge}
             </span>
             <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-pastel-slate-900 mt-1">
-              Sertifikasi & Penghargaan
+              {skills.awardsHeaderTitle}
             </h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certificationsAndAwards.map((item, aIdx) => {
+            {skills.awards.map((item, aIdx) => {
               const Icon = getAchievementIcon(item.iconName);
               return (
                 <div

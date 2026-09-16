@@ -12,10 +12,12 @@ import {
   Building2,
   Users,
 } from "lucide-react";
-import { personalData } from "@/data/portfolio-data";
+import { siteContent } from "@/content";
 import { BlobPhotoFrame } from "@/components/ui/BlobPhotoFrame";
 
 export const HeroSection: React.FC = () => {
+  const { hero, contact } = siteContent;
+
   return (
     <section
       id="hero"
@@ -38,51 +40,47 @@ export const HeroSection: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pastel-pink-100/80 border border-pastel-pink-200 text-pastel-pink-700 text-xs font-bold mb-5 shadow-sm">
               <span className="flex h-2 w-2 rounded-full bg-pastel-pink-500 animate-ping" />
               <Heart className="w-3.5 h-3.5 fill-pastel-pink-500 text-pastel-pink-500" />
-              <span>Sarjana Kesehatan Masyarakat Berpredikat Cumlaude</span>
+              <span>{hero.greetingBadge}</span>
             </div>
 
             <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-pastel-slate-900 tracking-tight leading-[1.15] mb-3">
-              Yulti Syaridayanti,{" "}
+              {hero.fullName},{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pastel-pink-500 via-pastel-rose-500 to-pastel-pink-600">
-                S.K.M.
+                {hero.degree}
               </span>
             </h1>
 
             <h2 className="text-base sm:text-lg md:text-xl font-bold text-pastel-pink-600/90 mb-4 max-w-xl">
-              Promosi Kesehatan & Ilmu Perilaku • Advokasi Komunitas
+              {hero.headline}
             </h2>
 
             <p className="text-sm sm:text-base text-pastel-slate-700 leading-relaxed max-w-xl mb-6 font-normal">
-              Lulusan terbaik Universitas Jambi dengan{" "}
-              <strong className="font-bold text-pastel-slate-900">
-                IPK 3.86 (Masa Studi 3,5 Tahun)
-              </strong>
-              . Memiliki pengalaman lapangan nyata dalam advokasi kesehatan masyarakat adat Suku Anak Dalam, intervensi Tuberkulosis, serta edukasi visual promotif di puskesmas & instansi kesehatan.
+              {hero.bio}
             </p>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-8">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-pastel-pink-200/80 text-xs font-semibold text-pastel-slate-800 shadow-xs">
                 <Award className="w-3.5 h-3.5 text-pastel-pink-500" />
-                <span>Cumlaude (3.5 Thn)</span>
+                <span>{hero.badges.cumlaude}</span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-pastel-mint-200/80 text-xs font-semibold text-pastel-slate-800 shadow-xs">
                 <Users className="w-3.5 h-3.5 text-pastel-mint-600" />
-                <span>Advokasi Suku Anak Dalam</span>
+                <span>{hero.badges.community}</span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-pastel-rose-200/80 text-xs font-semibold text-pastel-slate-800 shadow-xs">
                 <Building2 className="w-3.5 h-3.5 text-pastel-rose-500" />
-                <span>Puskesmas Tarutung & Rawasari</span>
+                <span>{hero.badges.puskesmas}</span>
               </span>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
               <a
-                href={personalData.cvPath}
+                href={contact.cvPath}
                 download="CV_Yulti_Syaridayanti_SKM.pdf"
                 className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-pastel-pink-500 via-pastel-pink-600 to-pastel-rose-500 text-white font-bold text-sm shadow-md shadow-pastel-pink-400/30 hover:shadow-xl hover:shadow-pastel-pink-400/40 transition-all duration-300 hover-heartbeat"
               >
                 <FileText className="w-4 h-4" />
-                <span>Unduh CV Resmi (.PDF)</span>
+                <span>{hero.downloadCvBtn}</span>
               </a>
 
               <Link
@@ -90,7 +88,7 @@ export const HeroSection: React.FC = () => {
                 className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-white text-pastel-pink-600 font-bold text-sm border-2 border-pastel-pink-300 shadow-sm hover:bg-pastel-pink-50 hover:border-pastel-pink-400 transition-all duration-200 group"
               >
                 <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                <span>Hubungi Saya</span>
+                <span>{hero.contactBtn}</span>
               </Link>
             </div>
           </motion.div>
@@ -109,11 +107,11 @@ export const HeroSection: React.FC = () => {
       <div className="flex justify-center mt-12">
         <Link
           href="#about"
-          aria-label="Gulir ke Seksi Tentang Saya"
+          aria-label={hero.explorePrompt}
           className="flex flex-col items-center gap-1 text-pastel-pink-400 hover:text-pastel-pink-600 transition-colors animate-bounce"
         >
           <span className="text-[11px] font-semibold tracking-wider uppercase">
-            Jelajahi Profil
+            {hero.explorePrompt}
           </span>
           <ChevronDown className="w-4 h-4" />
         </Link>

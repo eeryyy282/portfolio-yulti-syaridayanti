@@ -1,8 +1,9 @@
 import { ImageResponse } from "next/og";
+import { siteContent } from "@/content";
 
 export const runtime = "edge";
 
-export const alt = "Yulti Syaridayanti, S.K.M. - Portofolio Sarjana Kesehatan Masyarakat";
+export const alt = siteContent.metadata.ogTitle;
 export const size = {
   width: 1200,
   height: 630,
@@ -11,6 +12,8 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
+  const { hero, metadata } = siteContent;
+
   return new ImageResponse(
     (
       <div
@@ -26,7 +29,6 @@ export default async function Image() {
           position: "relative",
         }}
       >
-        {/* Top Header Pill */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div
             style={{
@@ -55,7 +57,7 @@ export default async function Image() {
                 letterSpacing: "0.5px",
               }}
             >
-              PORTOFOLIO RESMI
+              {metadata.ogBadge}
             </span>
           </div>
 
@@ -66,11 +68,10 @@ export default async function Image() {
               color: "#64748B",
             }}
           >
-            Universitas Jambi • IPK 3.86 (Cumlaude)
+            {metadata.ogSubHeader}
           </div>
         </div>
 
-        {/* Center Main Info */}
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <h1
             style={{
@@ -81,8 +82,8 @@ export default async function Image() {
               margin: 0,
             }}
           >
-            Yulti Syaridayanti,{" "}
-            <span style={{ color: "#EC4E80" }}>S.K.M.</span>
+            {hero.fullName},{" "}
+            <span style={{ color: "#EC4E80" }}>{hero.degree}</span>
           </h1>
 
           <h2
@@ -93,7 +94,7 @@ export default async function Image() {
               margin: 0,
             }}
           >
-            Promosi Kesehatan & Ilmu Perilaku • Advokasi Komunitas
+            {hero.headline}
           </h2>
 
           <p
@@ -105,51 +106,27 @@ export default async function Image() {
               margin: 0,
             }}
           >
-            Berpengalaman dalam advokasi kesehatan Suku Anak Dalam, intervensi Tuberkulosis (TB), edukasi media visual, serta optimalisasi data faskes di Puskesmas & BKKBN.
+            {metadata.ogDescription}
           </p>
         </div>
 
-        {/* Bottom Feature Badges */}
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div
-            style={{
-              padding: "10px 22px",
-              background: "#FFFFFF",
-              borderRadius: "16px",
-              fontSize: "18px",
-              fontWeight: "700",
-              color: "#1E293B",
-              border: "1px solid #FCD5E1",
-            }}
-          >
-            🌟 Lulus Cepat 3.5 Tahun
-          </div>
-          <div
-            style={{
-              padding: "10px 22px",
-              background: "#FFFFFF",
-              borderRadius: "16px",
-              fontSize: "18px",
-              fontWeight: "700",
-              color: "#1E293B",
-              border: "1px solid #FCD5E1",
-            }}
-          >
-            📄 Artikel Terakreditasi Sinta 3
-          </div>
-          <div
-            style={{
-              padding: "10px 22px",
-              background: "#FFFFFF",
-              borderRadius: "16px",
-              fontSize: "18px",
-              fontWeight: "700",
-              color: "#1E293B",
-              border: "1px solid #FCD5E1",
-            }}
-          >
-            🎤 Certified Public Speaking
-          </div>
+          {metadata.ogTags.map((tag, idx) => (
+            <div
+              key={idx}
+              style={{
+                padding: "10px 22px",
+                background: "#FFFFFF",
+                borderRadius: "16px",
+                fontSize: "18px",
+                fontWeight: "700",
+                color: "#1E293B",
+                border: "1px solid #FCD5E1",
+              }}
+            >
+              {tag}
+            </div>
+          ))}
         </div>
       </div>
     ),
@@ -158,4 +135,3 @@ export default async function Image() {
     }
   );
 }
-

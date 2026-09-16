@@ -14,27 +14,29 @@ import {
   Mail,
   Stethoscope,
 } from "lucide-react";
-import { personalData } from "@/data/portfolio-data";
+import { siteContent } from "@/content";
 
-const navItems = [
-  { label: "Beranda", href: "#hero", icon: Heart },
-  { label: "Tentang", href: "#about", icon: User },
-  { label: "Pengalaman", href: "#experience", icon: Briefcase },
-  { label: "Proyek", href: "#projects", icon: FolderHeart },
-  { label: "Keahlian", href: "#skills", icon: Sparkles },
-  { label: "Kontak", href: "#contact", icon: Mail },
-];
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  hero: Heart,
+  about: User,
+  experience: Briefcase,
+  projects: FolderHeart,
+  skills: Sparkles,
+  contact: Mail,
+};
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
+  const { navbar, contact } = siteContent;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ["hero", "about", "experience", "projects", "skills", "contact"];
+      const sections = navbar.navItems.map((item) => item.id);
       const scrollPosition = window.scrollY + 120;
 
       for (const sectionId of sections) {
@@ -52,7 +54,7 @@ export const Navbar: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navbar.navItems]);
 
   return (
     <header
@@ -72,18 +74,18 @@ export const Navbar: React.FC = () => {
           </div>
           <div>
             <span className="font-heading font-extrabold text-lg sm:text-xl text-pastel-slate-800 tracking-tight group-hover:text-pastel-pink-600 transition-colors">
-              Yulti Syaridayanti
+              {navbar.brandName}
             </span>
             <span className="hidden sm:block text-[11px] font-semibold text-pastel-pink-600 tracking-wide uppercase">
-              S.K.M. | Promkes & Perilaku
+              {navbar.brandDegree} | {navbar.brandRole}
             </span>
           </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1 bg-white/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-pastel-pink-200/70 shadow-sm">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeSection === item.href.replace("#", "");
+          {navbar.navItems.map((item) => {
+            const Icon = iconMap[item.id] || Heart;
+            const isActive = activeSection === item.id;
             return (
               <Link
                 key={item.href}
@@ -103,18 +105,18 @@ export const Navbar: React.FC = () => {
 
         <div className="hidden sm:flex items-center gap-2.5">
           <a
-            href={personalData.cvPath}
+            href={contact.cvPath}
             download="CV_Yulti_Syaridayanti_SKM.pdf"
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pastel-pink-500 to-pastel-rose-500 text-white text-xs font-bold shadow-md shadow-pastel-pink-400/30 hover:shadow-lg hover:shadow-pastel-pink-400/40 transition-all duration-200 hover-heartbeat"
           >
             <FileDown className="w-3.5 h-3.5" />
-            <span>Unduh CV</span>
+            <span>{navbar.downloadCvBtn}</span>
           </a>
         </div>
 
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Buka Menu Navigasi"
+          aria-label="Toggle Navigation Menu"
           className="md:hidden w-10 h-10 rounded-2xl bg-pastel-pink-100/80 text-pastel-pink-600 flex items-center justify-center border border-pastel-pink-200 focus:outline-none"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -124,9 +126,9 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden glass-nav border-b border-pastel-pink-200 px-6 py-4 mt-2 shadow-lg animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col gap-2">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = activeSection === item.href.replace("#", "");
+            {navbar.navItems.map((item) => {
+              const Icon = iconMap[item.id] || Heart;
+              const isActive = activeSection === item.id;
               return (
                 <Link
                   key={item.href}
@@ -152,13 +154,13 @@ export const Navbar: React.FC = () => {
 
             <div className="pt-2 border-t border-pastel-pink-200/60 mt-1">
               <a
-                href={personalData.cvPath}
+                href={contact.cvPath}
                 download="CV_Yulti_Syaridayanti_SKM.pdf"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-pastel-pink-500 to-pastel-rose-500 text-white text-xs font-bold shadow-md"
               >
                 <FileDown className="w-4 h-4" />
-                <span>Unduh CV Yulti Syaridayanti (.PDF)</span>
+                <span>{navbar.downloadCvBtn} (.PDF)</span>
               </a>
             </div>
           </div>

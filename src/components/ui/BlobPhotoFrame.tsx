@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Sparkles, Award, Activity, Stethoscope } from "lucide-react";
+import { siteContent } from "@/content";
 
 interface BlobPhotoFrameProps {
   imageSrc?: string;
@@ -14,6 +15,7 @@ export const BlobPhotoFrame: React.FC<BlobPhotoFrameProps> = ({
   className = "",
 }) => {
   const [imageError, setImageError] = useState(false);
+  const { hero, ui } = siteContent;
 
   return (
     <div className={`relative flex items-center justify-center ${className}`}>
@@ -35,7 +37,7 @@ export const BlobPhotoFrame: React.FC<BlobPhotoFrameProps> = ({
             <div className="relative w-full h-full rounded-[38%_62%_63%_37%/41%_44%_56%_59%] overflow-hidden">
               <Image
                 src={imageSrc}
-                alt="Foto Profil Yulti Syaridayanti, S.K.M."
+                alt={`${hero.fullName}, ${hero.degree}`}
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 280px, 380px"
@@ -49,14 +51,14 @@ export const BlobPhotoFrame: React.FC<BlobPhotoFrameProps> = ({
                 <span className="text-3xl font-heading font-bold">YS</span>
               </div>
               <h3 className="font-heading font-bold text-lg text-pastel-slate-800">
-                Yulti Syaridayanti
+                {hero.fullName}
               </h3>
               <p className="text-xs font-medium text-pastel-pink-600 bg-pastel-pink-50 px-3 py-1 rounded-full mt-1 border border-pastel-pink-200">
-                Sarjana Kesehatan Masyarakat
+                {ui.avatarFallbackRole}
               </p>
               <div className="flex items-center gap-1 mt-2 text-pastel-slate-500 text-[11px]">
                 <Stethoscope className="w-3.5 h-3.5 text-pastel-mint-500" />
-                <span>Promosi Kesehatan & IPE</span>
+                <span>{ui.avatarFallbackSpecialty}</span>
               </div>
             </div>
           )}
@@ -69,11 +71,11 @@ export const BlobPhotoFrame: React.FC<BlobPhotoFrameProps> = ({
         </div>
         <div>
           <div className="text-xs font-bold text-pastel-slate-800 flex items-center gap-1">
-            <span>Cumlaude 3.86</span>
+            <span>{ui.avatarBadgeCumlaude}</span>
             <Sparkles className="w-3 h-3 text-amber-400 fill-amber-400" />
           </div>
           <div className="text-[10px] text-pastel-slate-500 font-medium">
-            3.5 Tahun Studi
+            {ui.avatarBadgeStudyTime}
           </div>
         </div>
       </div>
@@ -87,10 +89,10 @@ export const BlobPhotoFrame: React.FC<BlobPhotoFrameProps> = ({
         </div>
         <div>
           <div className="text-xs font-bold text-pastel-slate-800">
-            Promkes & Perilaku
+            {ui.avatarBadgeField}
           </div>
           <div className="text-[10px] text-pastel-mint-600 font-medium">
-            Advokasi Komunitas
+            {ui.avatarBadgeSubField}
           </div>
         </div>
       </div>
