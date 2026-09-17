@@ -22,9 +22,6 @@ export const idContent: PortfolioContent = {
     ogTitle: "Yulti Syaridayanti, S.K.M. | Portofolio Promosi Kesehatan & Advokasi Komunitas",
     ogDescription:
       "Portofolio profesional Yulti Syaridayanti, Sarjana Kesehatan Masyarakat Universitas Jambi (Cumlaude 3.86) berfokus pada promosi kesehatan, edukasi visual, dan advokasi komunitas adat.",
-    ogBadge: "PORTOFOLIO RESMI",
-    ogSubHeader: "Universitas Jambi • IPK 3.86 (Cumlaude)",
-    ogTags: ["🌟 Lulus Cepat 3.5 Tahun", "📄 Artikel Terakreditasi Sinta 3", "🎤 Certified Public Speaking"],
   },
 
   navbar: {

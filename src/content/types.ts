@@ -62,9 +62,6 @@ export interface PortfolioContent {
     keywords: string[];
     ogTitle: string;
     ogDescription: string;
-    ogBadge: string;
-    ogSubHeader: string;
-    ogTags: string[];
   };
   navbar: {
     brandName: string;
