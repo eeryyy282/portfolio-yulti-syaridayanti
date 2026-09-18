@@ -27,7 +27,7 @@ export const idContent: PortfolioContent = {
   navbar: {
     brandName: "Yulti Syaridayanti",
     brandDegree: "S.K.M.",
-    brandRole: "Promkes & Perilaku",
+    brandRole: "Promkes & Ilmu erilaku",
     downloadCvBtn: "Unduh CV",
     navItems: [
       { id: "hero", label: "Beranda", href: "#hero" },
