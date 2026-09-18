@@ -317,7 +317,7 @@ export const idContent: PortfolioContent = {
     locationValue: "Jambi & Kerinci, Indonesia",
     cvCardTitle: "Butuh File CV Yulti?",
     cvCardDesc:
-      "Anda bisa mengunduh file resume resmi yang dilengkapi tanda tangan digital beserta lampiran portofolio lengkap saya.",
+      "Anda bisa mengunduh file resume (CV) lengkap saya.",
     cvCardBtn: "Unduh CV (.PDF)",
     cvPath: "/cv/CV_Yulti_Syaridayanti.pdf",
     formTitle: "Kirim Pesan Cepat",
