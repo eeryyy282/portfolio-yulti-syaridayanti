@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { siteContent } from "@/content";
 import { StorysetHealthIllustration } from "@/components/ui/StorysetHealthIllustration";
-import { HeartbeatLine } from "@/components/ui/HeartbeatLine";
 
 export const AboutSection: React.FC = () => {
   const { about } = siteContent;
@@ -155,8 +154,6 @@ export const AboutSection: React.FC = () => {
             );
           })}
         </div>
-
-        <HeartbeatLine />
       </div>
     </section>
   );

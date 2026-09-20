@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { siteContent } from "@/content";
 import { BlobPhotoFrame } from "@/components/ui/BlobPhotoFrame";
+import { HeartbeatLine } from "@/components/ui/HeartbeatLine";
 
 export const HeroSection: React.FC = () => {
   const { hero, contact } = siteContent;
@@ -102,19 +103,25 @@ export const HeroSection: React.FC = () => {
             <BlobPhotoFrame />
           </motion.div>
         </div>
-      </div>
 
-      <div className="flex justify-center mt-12">
-        <Link
-          href="#about"
-          aria-label={hero.explorePrompt}
-          className="flex flex-col items-center gap-1 text-pastel-pink-400 hover:text-pastel-pink-600 transition-colors animate-bounce"
-        >
-          <span className="text-[11px] font-semibold tracking-wider uppercase">
-            {hero.explorePrompt}
-          </span>
-          <ChevronDown className="w-4 h-4" />
-        </Link>
+        {/* Heartbeat Line (Couple Connection) */}
+        <div className="mt-14">
+          <HeartbeatLine />
+        </div>
+
+        {/* Explore Prompt */}
+        <div className="flex justify-center pt-2">
+          <Link
+            href="#about"
+            aria-label={hero.explorePrompt}
+            className="flex flex-col items-center gap-1 text-pastel-pink-400 hover:text-pastel-pink-600 transition-colors animate-bounce"
+          >
+            <span className="text-[11px] font-semibold tracking-wider uppercase">
+              {hero.explorePrompt}
+            </span>
+            <ChevronDown className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
