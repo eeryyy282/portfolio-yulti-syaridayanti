@@ -69,6 +69,11 @@ export interface PortfolioContent {
     brandRole: string;
     downloadCvBtn: string;
     navItems: NavItem[];
+    coupleLink: {
+      title: string;
+      url: string;
+      partnerName: string;
+    };
   };
   hero: {
     greetingBadge: string;
@@ -166,6 +171,12 @@ export interface PortfolioContent {
     backToTopBtn: string;
     copyrightText: string;
     subNote: string;
+    coupleNote: {
+      prefix: string;
+      partnerName: string;
+      partnerDegree: string;
+      url: string;
+    };
   };
   ui: {
     heartbeatBadge: string;

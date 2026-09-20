@@ -27,7 +27,7 @@ export const idContent: PortfolioContent = {
   navbar: {
     brandName: "Yulti Syaridayanti",
     brandDegree: "S.K.M.",
-    brandRole: "Promkes & Ilmu erilaku",
+    brandRole: "Promkes & Ilmu Perilaku",
     downloadCvBtn: "Unduh CV",
     navItems: [
       { id: "hero", label: "Beranda", href: "#hero" },
@@ -37,6 +37,11 @@ export const idContent: PortfolioContent = {
       { id: "skills", label: "Keahlian", href: "#skills" },
       { id: "contact", label: "Kontak", href: "#contact" },
     ],
+    coupleLink: {
+      title: "Kunjungi Portofolio Muhammad Juzairi Safitli 💙",
+      url: "https://portfolio-juzairi-safitli.vercel.app/",
+      partnerName: "Muhammad Juzairi Safitli",
+    },
   },
 
   hero: {
@@ -348,10 +353,16 @@ export const idContent: PortfolioContent = {
     backToTopBtn: "Kembali ke Atas",
     copyrightText: "Yulti Syaridayanti, S.K.M. Dibuat dengan penuh dedikasi untuk dunia Kesehatan Masyarakat.",
     subNote: "Universitas Jambi • Puskesmas Tarutung",
+    coupleNote: {
+      prefix: "Dibuat sepenuh hati, berdampingan dengan portofolio",
+      partnerName: "Muhammad Juzairi Safitli",
+      partnerDegree: "S.Kom.",
+      url: "https://portfolio-juzairi-safitli.vercel.app/",
+    },
   },
 
   ui: {
-    heartbeatBadge: "Promkes & Care",
+    heartbeatBadge: "Connected Pulse",
     avatarFallbackRole: "Sarjana Kesehatan Masyarakat",
     avatarFallbackSpecialty: "Promosi Kesehatan & IPE",
     avatarBadgeCumlaude: "Cumlaude 3.86",

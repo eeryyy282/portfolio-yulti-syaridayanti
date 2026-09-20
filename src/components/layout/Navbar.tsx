@@ -105,6 +105,18 @@ export const Navbar: React.FC = () => {
 
         <div className="hidden sm:flex items-center gap-2.5">
           <a
+            href={navbar.coupleLink.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={navbar.coupleLink.title}
+            aria-label={navbar.coupleLink.title}
+            className="group relative w-9 h-9 rounded-full flex items-center justify-center bg-sky-50 text-sky-600 hover:bg-sky-100 border border-sky-200/70 transition-all duration-200 hover:scale-110 shadow-xs"
+          >
+            <Heart className="w-4 h-4 fill-sky-400 text-sky-500 group-hover:scale-125 transition-transform" />
+            <span className="sr-only">{navbar.coupleLink.title}</span>
+          </a>
+
+          <a
             href={contact.cvPath}
             download="CV_Yulti_Syaridayanti_SKM.pdf"
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pastel-pink-500 to-pastel-rose-500 text-white text-xs font-bold shadow-md shadow-pastel-pink-400/30 hover:shadow-lg hover:shadow-pastel-pink-400/40 transition-all duration-200 hover-heartbeat"
@@ -114,13 +126,27 @@ export const Navbar: React.FC = () => {
           </a>
         </div>
 
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle Navigation Menu"
-          className="md:hidden w-10 h-10 rounded-2xl bg-pastel-pink-100/80 text-pastel-pink-600 flex items-center justify-center border border-pastel-pink-200 focus:outline-none"
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="flex sm:hidden items-center gap-2">
+          <a
+            href={navbar.coupleLink.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={navbar.coupleLink.title}
+            aria-label={navbar.coupleLink.title}
+            className="w-9 h-9 rounded-full flex items-center justify-center bg-sky-50 text-sky-600 border border-sky-200/70"
+          >
+            <Heart className="w-4 h-4 fill-sky-400 text-sky-500" />
+            <span className="sr-only">{navbar.coupleLink.title}</span>
+          </a>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
+            className="w-10 h-10 rounded-2xl bg-pastel-pink-100/80 text-pastel-pink-600 flex items-center justify-center border border-pastel-pink-200 focus:outline-none"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {mobileMenuOpen && (

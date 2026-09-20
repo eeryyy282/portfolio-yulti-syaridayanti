@@ -32,9 +32,20 @@ export const ExperienceSection: React.FC = () => {
         </div>
 
         <div className="relative">
+          {/* Medical Infusion / Thermometer connector line */}
           <div
             aria-hidden="true"
-            className="absolute left-4 sm:left-1/2 top-2 bottom-2 w-1 -translate-x-1/2 bg-gradient-to-b from-pastel-pink-400 via-pastel-rose-300 to-pastel-pink-200 rounded-full"
+            className="absolute left-4 sm:left-1/2 top-1 bottom-1 w-1 -translate-x-1/2 bg-gradient-to-b from-pastel-pink-400 via-pastel-rose-300 to-pastel-pink-300 rounded-full"
+          />
+          {/* Top drip chamber accent */}
+          <div
+            aria-hidden="true"
+            className="absolute left-4 sm:left-1/2 -top-1 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-pastel-pink-500 border-2 border-white shadow-xs"
+          />
+          {/* Bottom thermometer reservoir bulb */}
+          <div
+            aria-hidden="true"
+            className="absolute left-4 sm:left-1/2 -bottom-1 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-pastel-pink-500 to-pastel-rose-400 border-2 border-white shadow-sm"
           />
 
           <div className="space-y-12">

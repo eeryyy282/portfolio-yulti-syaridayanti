@@ -75,10 +75,24 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-pastel-slate-500">
-          <div className="flex items-center gap-1.5 justify-center">
-            <span>© {new Date().getFullYear()} {footer.copyrightText}</span>
-            <Heart className="w-3.5 h-3.5 text-pastel-pink-500 fill-pastel-pink-500 inline-block" />
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-xs text-pastel-slate-500">
+          <div className="space-y-1">
+            <div className="flex items-center gap-1.5 justify-center md:justify-start">
+              <span>© {new Date().getFullYear()} {footer.copyrightText}</span>
+              <Heart className="w-3.5 h-3.5 text-pastel-pink-500 fill-pastel-pink-500 inline-block" />
+            </div>
+            <div className="text-[11px] text-pastel-slate-500 flex flex-wrap items-center justify-center md:justify-start gap-1">
+              <span>{footer.coupleNote.prefix}</span>
+              <a
+                href={footer.coupleNote.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-sky-600 hover:text-sky-700 underline decoration-sky-300 hover:decoration-sky-500 transition-colors inline-flex items-center gap-1"
+              >
+                <span>{footer.coupleNote.partnerName}, {footer.coupleNote.partnerDegree}</span>
+                <span className="text-[10px]">💙</span>
+              </a>
+            </div>
           </div>
           <div className="text-[11px] text-pastel-slate-400">
             {footer.subNote}
