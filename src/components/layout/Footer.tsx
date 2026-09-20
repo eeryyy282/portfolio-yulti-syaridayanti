@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     className="font-bold underline hover:text-blue-800 transition-colors"
                   >
-                    {footer.coupleNote.partnerName}, {footer.coupleNote.partnerDegree} 💙
+                    {footer.coupleNote.partnerName}, {footer.coupleNote.partnerDegree}
                   </a>
                 </span>
               </div>
