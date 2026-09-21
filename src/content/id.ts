@@ -29,7 +29,7 @@ export const idContent: PortfolioContent = {
   navbar: {
     brandName: "Yulti Syaridayanti",
     brandDegree: "S.K.M.",
-    brandRole: "Promosi Kesehatan dan Ilmu Perilaku",
+    brandRole: "Public Health",
     downloadCvBtn: "Unduh CV",
     navItems: [
       { id: "hero", label: "Beranda", href: "#hero" },
