@@ -73,12 +73,15 @@ export const Navbar: React.FC = () => {
             <Stethoscope className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
           </div>
           <div>
-            <span className="font-heading font-extrabold text-lg sm:text-xl text-pastel-slate-800 tracking-tight group-hover:text-pastel-pink-600 transition-colors">
+            <span className="font-heading font-extrabold text-base sm:text-lg text-pastel-slate-800 tracking-tight group-hover:text-pastel-pink-600 transition-colors block leading-tight">
               {navbar.brandName}
             </span>
-            <span className="hidden sm:block text-[11px] font-semibold text-pastel-pink-600 tracking-wide uppercase">
-              {navbar.brandDegree} | {navbar.brandRole}
-            </span>
+            <div className="hidden sm:block text-[10.5px] font-semibold text-pastel-pink-600 tracking-wide leading-tight mt-0.5">
+              <span>{navbar.brandDegree}</span>
+              <span className="block text-[10px] text-pastel-slate-500 font-medium">
+                {navbar.brandRole}
+              </span>
+            </div>
           </div>
         </Link>
 
