@@ -8,8 +8,10 @@ export const idContent: PortfolioContent = {
     keywords: [
       "Yulti Syaridayanti",
       "Kesehatan Masyarakat",
+      "Public Health",
       "Promosi Kesehatan",
       "Ilmu Perilaku",
+      "Promosi Kesehatan dan Ilmu Perilaku",
       "S.K.M.",
       "Universitas Jambi",
       "Puskesmas Tarutung",
@@ -27,7 +29,7 @@ export const idContent: PortfolioContent = {
   navbar: {
     brandName: "Yulti Syaridayanti",
     brandDegree: "S.K.M.",
-    brandRole: "Promkes & Ilmu Perilaku",
+    brandRole: "Promosi Kesehatan dan Ilmu Perilaku",
     downloadCvBtn: "Unduh CV",
     navItems: [
       { id: "hero", label: "Beranda", href: "#hero" },
@@ -367,7 +369,7 @@ export const idContent: PortfolioContent = {
     avatarFallbackSpecialty: "Promosi Kesehatan & IPE",
     avatarBadgeCumlaude: "Cumlaude 3.86",
     avatarBadgeStudyTime: "3.5 Tahun Studi",
-    avatarBadgeField: "Promkes & Perilaku",
+    avatarBadgeField: "Promosi Kesehatan dan Ilmu Perilaku",
     avatarBadgeSubField: "Advokasi Komunitas",
   },
 };

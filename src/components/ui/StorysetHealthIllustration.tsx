@@ -142,7 +142,7 @@ export const StorysetHealthIllustration: React.FC<IllustrationProps> = ({
         <circle cx="350" cy="369" r="12" fill="#CCFBF1" />
         <path d="M350 363V375M344 369H356" stroke="#0D9488" strokeWidth="2.5" strokeLinecap="round" />
         <text x="368" y="367" fill="#1E293B" fontSize="11" fontWeight="bold" fontFamily="sans-serif">
-          Promkes & IPE
+          Public Health
         </text>
         <text x="368" y="379" fill="#0D9488" fontSize="8" fontWeight="600" fontFamily="sans-serif">
           Komunitas Sehat
