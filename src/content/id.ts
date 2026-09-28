@@ -51,7 +51,7 @@ export const idContent: PortfolioContent = {
     fullName: "Yulti Syaridayanti",
     degree: "S.K.M.",
     headline: "Promosi Kesehatan & Ilmu Perilaku • Advokasi Komunitas",
-    bio: "Halo, saya Yulti. Sebagai Sarjana Kesehatan Masyarakat lulusan Universitas Jambi dengan predikat Cumlaude, saya memiliki ketertarikan mendalam pada Promosi Kesehatan dan Ilmu Perilaku. Saya terbiasa turun langsung ke lapangan untuk melakukan advokasi masyarakat di daerah khusus, memberdayakan komunitas adat, serta merancang program kesehatan preventif yang inovatif dan tepat sasaran bagi warga.",
+    bio: "Sebagai Sarjana Kesehatan Masyarakat lulusan Universitas Jambi dengan predikat Cumlaude, saya memiliki ketertarikan mendalam pada Promosi Kesehatan dan Ilmu Perilaku. Saya terbiasa turun langsung ke lapangan untuk melakukan advokasi masyarakat di daerah khusus, memberdayakan komunitas adat, serta merancang program kesehatan preventif yang inovatif dan tepat sasaran bagi warga.",
     badges: {
       cumlaude: "Cumlaude (3.5 Thn)",
       community: "Advokasi Suku Anak Dalam",
