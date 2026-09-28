@@ -364,7 +364,7 @@ export const idContent: PortfolioContent = {
   },
 
   ui: {
-    heartbeatBadge: "Dedikasi Profesional",
+    heartbeatBadge: "Connected Pulse",
     avatarFallbackRole: "Sarjana KesMas",
     avatarFallbackSpecialty: "PromKes & Edukasi",
     avatarBadgeCumlaude: "Cumlaude 3.86",
