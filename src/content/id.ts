@@ -369,7 +369,7 @@ export const idContent: PortfolioContent = {
     avatarFallbackSpecialty: "PromKes & Edukasi",
     avatarBadgeCumlaude: "Cumlaude 3.86",
     avatarBadgeStudyTime: "3.5 Tahun Lulus",
-    avatarBadgeField: "Promosi Kesehatan",
+    avatarBadgeField: "Promosi Kesehatan & Ilmu Perilaku",
     avatarBadgeSubField: "Advokasi Komunitas",
   },
 };
