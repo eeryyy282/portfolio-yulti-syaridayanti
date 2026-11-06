@@ -89,7 +89,7 @@ export const AboutSection: React.FC = () => {
                     <span className="font-bold text-pastel-slate-900">
                       {about.educationSummary.institution}
                     </span>{" "}
-                    — {about.educationSummary.degree} ({about.educationSummary.predicate}). {about.educationSummary.publicationPrefix}{" "}
+                    - {about.educationSummary.degree} ({about.educationSummary.predicate}). {about.educationSummary.publicationPrefix}{" "}
                     <span className="font-bold text-pastel-pink-600">
                       {about.educationSummary.publicationHighlight}
                     </span>

@@ -13,6 +13,7 @@ import {
   Mic,
   Medal,
   CheckCircle,
+  FileCheck,
 } from "lucide-react";
 import { siteContent } from "@/content";
 
@@ -44,6 +45,8 @@ export const SkillsSection: React.FC = () => {
         return Mic;
       case "Sparkles":
         return Medal;
+      case "FileCheck":
+        return FileCheck;
       default:
         return Award;
     }
