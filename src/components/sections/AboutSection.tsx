@@ -77,6 +77,12 @@ export const AboutSection: React.FC = () => {
                       {about.educationSummary.publicationHighlight}
                     </span>
                     .
+                    <p className="mt-1.5 text-xs text-pastel-slate-600">
+                      <span className="font-semibold text-pastel-slate-800">
+                        {about.educationSummary.studyFocusLabel}:
+                      </span>{" "}
+                      {about.educationSummary.studyFocus}
+                    </p>
                   </div>
                 </div>
               </div>

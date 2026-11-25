@@ -107,6 +107,8 @@ export interface PortfolioContent {
       predicate: string;
       publicationPrefix: string;
       publicationHighlight: string;
+      studyFocusLabel: string;
+      studyFocus: string;
     };
     stats: StatItem[];
     pillars: PillarItem[];
