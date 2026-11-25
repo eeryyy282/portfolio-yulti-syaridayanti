@@ -14,46 +14,44 @@ export const HeartbeatLine: React.FC<HeartbeatLineProps> = ({
 
   return (
     <div className={`relative flex items-center justify-center w-full my-8 ${className}`}>
-      <div className="w-full max-w-2xl h-14 flex items-center justify-center relative overflow-visible">
+      <div className="group w-full max-w-2xl h-16 flex items-center justify-center relative overflow-visible">
         <svg
+          aria-hidden="true"
           viewBox="0 0 800 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid meet"
           className="w-full h-full stroke-pastel-pink-400 overflow-visible"
         >
+          {/* Base Track */}
           <path
             d="M0 40 H270 L282 40 L292 18 L304 62 L316 26 L326 48 L336 40 H464 L474 40 L484 18 L496 62 L508 26 L518 48 L528 40 H800"
             stroke="currentColor"
-            strokeWidth="2.5"
-            strokeOpacity="0.25"
+            strokeWidth="2.25"
+            strokeOpacity="0.22"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="transition-opacity duration-300 group-hover:opacity-80"
           />
 
+          {/* Continuous Flowing EKG Wave Sweep */}
           <path
             d="M0 40 H270 L282 40 L292 18 L304 62 L316 26 L326 48 L336 40 H464 L474 40 L484 18 L496 62 L508 26 L518 48 L528 40 H800"
-            stroke="url(#pinkEkgGradient)"
-            strokeWidth="3"
+            stroke="#D92E63"
+            strokeWidth="2.75"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="animate-ekg-flow"
+            className="animate-ekg-sweep transition-colors duration-300 group-hover:stroke-pastel-pink-500"
           />
-
-          <defs>
-            <linearGradient id="pinkEkgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#F9B2C7" stopOpacity="0.2" />
-              <stop offset="35%" stopColor="#F47FA4" stopOpacity="0.9" />
-              <stop offset="50%" stopColor="#EC4E80" stopOpacity="1" />
-              <stop offset="65%" stopColor="#F47FA4" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#F9B2C7" stopOpacity="0.2" />
-            </linearGradient>
-          </defs>
         </svg>
 
         {withHeart && (
-          <div className="absolute left-1/2 top-1/2 bg-white px-3.5 py-1.5 rounded-lg border border-pastel-pink-200 shadow-sm flex items-center gap-1.5 animate-pulse-beat z-10">
+          <div
+            tabIndex={0}
+            className="absolute left-1/2 top-1/2 bg-white px-3.5 py-1.5 rounded-lg border border-pastel-pink-200 shadow-sm flex items-center gap-1.5 animate-pulse-beat z-10 transition-all duration-200 hover:border-pastel-pink-500 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pastel-pink-500"
+          >
             <svg
+              aria-hidden="true"
               className="w-4 h-4 text-pastel-pink-600 fill-pastel-pink-600"
               viewBox="0 0 24 24"
             >
