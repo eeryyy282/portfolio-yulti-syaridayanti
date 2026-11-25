@@ -60,29 +60,6 @@ const config: Config = {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
       },
-      animation: {
-        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        heartbeat: "heartbeat 1.5s ease-in-out infinite",
-        float: "float 4s ease-in-out infinite",
-        "blob-spin": "blob 10s infinite linear",
-      },
-      keyframes: {
-        heartbeat: {
-          "0%, 100%": { transform: "scale(1)" },
-          "14%": { transform: "scale(1.1)" },
-          "28%": { transform: "scale(1)" },
-          "42%": { transform: "scale(1.15)" },
-          "70%": { transform: "scale(1)" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" },
-        },
-        blob: {
-          "0%, 100%": { borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" },
-          "50%": { borderRadius: "30% 60% 70% 40% / 50% 60% 30% 60%" },
-        },
-      },
     },
   },
   plugins: [],

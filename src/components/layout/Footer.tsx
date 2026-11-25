@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-pastel-pink-100 items-start">
           <div className="md:col-span-6 space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-2xl bg-pastel-pink-500 text-white flex items-center justify-center shadow-xs">
+              <div className="w-9 h-9 rounded-lg bg-pastel-pink-600 text-white flex items-center justify-center">
                 <Stethoscope className="w-5 h-5" />
               </div>
               <div>
@@ -30,8 +30,8 @@ export const Footer: React.FC = () => {
 
             {/* Couple Theme Note */}
             <div className="pt-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50/80 border border-blue-200/60 text-xs text-blue-700 shadow-xs">
-                <Heart className="w-3.5 h-3.5 fill-blue-500 text-blue-500 shrink-0 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50/80 border border-blue-200/60 text-xs text-blue-700">
+                <Heart className="w-3.5 h-3.5 fill-blue-500 text-blue-500 shrink-0" />
                 <span>
                   {footer.coupleNote.prefix}{" "}
                   <a
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="md:col-span-3 space-y-2">
-            <h4 className="font-heading font-bold text-xs text-pastel-slate-900 uppercase tracking-wider">
+            <h4 className="font-heading font-bold text-sm text-pastel-slate-900">
               {footer.navTitle}
             </h4>
             <ul className="space-y-1.5 text-xs text-pastel-slate-600">
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="md:col-span-3 space-y-2.5">
-            <h4 className="font-heading font-bold text-xs text-pastel-slate-900 uppercase tracking-wider">
+            <h4 className="font-heading font-bold text-sm text-pastel-slate-900">
               {footer.contactTitle}
             </h4>
             <div className="text-xs text-pastel-slate-600 space-y-1">
@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
             <div className="pt-2">
               <Link
                 href="#hero"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-pastel-pink-50 hover:bg-pastel-pink-100 text-pastel-pink-600 text-xs font-bold border border-pastel-pink-200 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-pastel-pink-50 hover:bg-pastel-pink-100 text-pastel-pink-600 text-xs font-bold border border-pastel-pink-200 transition-colors"
               >
                 <ArrowUp className="w-3.5 h-3.5" />
                 <span>{footer.backToTopBtn}</span>

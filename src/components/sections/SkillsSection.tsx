@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Sparkles,
   Megaphone,
@@ -55,12 +54,11 @@ export const SkillsSection: React.FC = () => {
   return (
     <section id="skills" className="py-20 relative bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-pink-100 text-pastel-pink-700 text-xs font-bold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{skills.badge}</span>
-          </div>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-pastel-slate-900 tracking-tight mb-3">
+        <div className="text-left max-w-2xl mb-12 space-y-2">
+          <p className="text-xs font-semibold text-pastel-pink-600">
+            {skills.badge}
+          </p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-pastel-slate-900 tracking-tight">
             {skills.title}
           </h2>
           <p className="text-sm sm:text-base text-pastel-slate-600">
@@ -72,21 +70,16 @@ export const SkillsSection: React.FC = () => {
           {skills.categories.map((cat, idx) => {
             const Icon = getCategoryIcon(cat.iconName);
             return (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="p-6 rounded-3xl bg-pastel-pink-50/40 border border-pastel-pink-200/80 hover:border-pastel-pink-300 hover:shadow-md transition-all flex flex-col"
+                className="p-6 rounded-xl bg-pastel-cream-50 border border-pastel-pink-200/80 hover:border-pastel-pink-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-pastel-pink-200 text-pastel-pink-600 flex items-center justify-center shadow-xs mb-4">
-                  <Icon className="w-6 h-6" />
+                <div className="flex items-center gap-2.5 mb-4">
+                  <Icon className="w-5 h-5 text-pastel-pink-600" />
+                  <h3 className="font-heading font-bold text-base text-pastel-slate-900">
+                    {cat.title}
+                  </h3>
                 </div>
-
-                <h3 className="font-heading font-bold text-base text-pastel-slate-900 mb-4">
-                  {cat.title}
-                </h3>
 
                 <ul className="space-y-2.5 mt-auto">
                   {cat.skills.map((skill, sIdx) => (
@@ -96,17 +89,17 @@ export const SkillsSection: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
-        <div className="bg-gradient-to-tr from-pastel-pink-100/70 via-pastel-rose-50/60 to-pastel-cream-100/70 p-6 sm:p-10 rounded-3xl border border-pastel-pink-200 shadow-sm">
-          <div className="max-w-xl mx-auto text-center mb-8">
-            <span className="text-xs font-bold text-pastel-pink-600 uppercase tracking-wider">
+        <div className="bg-pastel-cream-50 p-6 sm:p-8 rounded-xl border border-pastel-pink-200 shadow-sm">
+          <div className="max-w-xl text-left mb-8 space-y-1">
+            <p className="text-xs font-semibold text-pastel-pink-600">
               {skills.awardsHeaderBadge}
-            </span>
-            <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-pastel-slate-900 mt-1">
+            </p>
+            <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-pastel-slate-900">
               {skills.awardsHeaderTitle}
             </h3>
           </div>
@@ -117,20 +110,18 @@ export const SkillsSection: React.FC = () => {
               return (
                 <div
                   key={aIdx}
-                  className="bg-white/90 backdrop-blur-sm p-5 rounded-2xl border border-pastel-pink-200/80 shadow-xs hover:shadow-md transition-all"
+                  className="bg-white p-5 rounded-xl border border-pastel-pink-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <div className="w-9 h-9 rounded-xl bg-pastel-pink-50 border border-pastel-pink-200 text-pastel-pink-600 flex items-center justify-center">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <span className="text-[10px] font-bold text-pastel-pink-600 bg-pastel-pink-50 px-2 py-0.5 rounded-full border border-pastel-pink-100">
+                    <Icon className="w-4 h-4 text-pastel-pink-600" />
+                    <span className="text-xs font-semibold text-pastel-pink-600">
                       {item.category}
                     </span>
                   </div>
                   <h4 className="font-heading font-bold text-sm text-pastel-slate-900 mb-1.5 leading-snug">
                     {item.title}
                   </h4>
-                  <p className="text-[11px] text-pastel-slate-600 leading-relaxed">
+                  <p className="text-xs text-pastel-slate-600 leading-relaxed">
                     {item.description}
                   </p>
                 </div>

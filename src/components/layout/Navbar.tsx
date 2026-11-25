@@ -69,20 +69,20 @@ export const Navbar: React.FC = () => {
           href="#hero"
           className="flex items-center gap-2.5 group cursor-pointer focus:outline-none"
         >
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pastel-pink-400 to-pastel-rose-400 text-white flex items-center justify-center shadow-md shadow-pastel-pink-300/40 group-hover:scale-105 transition-transform duration-200">
-            <Stethoscope className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+          <div className="w-10 h-10 rounded-xl bg-pastel-pink-600 text-white flex items-center justify-center shadow-sm group-hover:bg-pastel-pink-700 transition-colors">
+            <Stethoscope className="w-5 h-5" />
           </div>
           <div>
             <span className="font-heading font-extrabold text-base sm:text-lg text-pastel-slate-800 tracking-tight group-hover:text-pastel-pink-600 transition-colors">
               {navbar.brandName}
             </span>
-            <span className="hidden sm:block text-[11px] font-semibold text-pastel-pink-600 tracking-wide uppercase">
+            <span className="hidden sm:block text-xs font-medium text-pastel-pink-600">
               {navbar.brandDegree} | {navbar.brandRole}
             </span>
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1 bg-white/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-pastel-pink-200/70 shadow-sm">
+        <nav className="hidden md:flex items-center gap-1 bg-white/80 backdrop-blur-md px-2 py-1.5 rounded-xl border border-pastel-pink-200/70 shadow-sm">
           {navbar.navItems.map((item) => {
             const Icon = iconMap[item.id] || Heart;
             const isActive = activeSection === item.id;
@@ -90,50 +90,50 @@ export const Navbar: React.FC = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors duration-200 ${
                   isActive
-                    ? "bg-pastel-pink-500 text-white shadow-sm"
+                    ? "bg-pastel-pink-600 text-white"
                     : "text-pastel-slate-700 hover:text-pastel-pink-600 hover:bg-pastel-pink-50"
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-pastel-pink-400"}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-pastel-pink-500"}`} />
                 <span>{item.label}</span>
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden sm:flex items-center gap-2.5">
+        <div className="hidden md:flex items-center gap-2">
           <a
             href={navbar.coupleLink.url}
             target="_blank"
             rel="noopener noreferrer"
             title={navbar.coupleLink.title}
             aria-label={navbar.coupleLink.title}
-            className="group relative w-9 h-9 rounded-full flex items-center justify-center bg-sky-50 text-sky-600 hover:bg-sky-100 border border-sky-200/70 transition-all duration-200 hover:scale-110 shadow-xs"
+            className="w-9 h-9 rounded-lg flex items-center justify-center bg-sky-50 text-sky-600 hover:bg-sky-100 border border-sky-200/70 transition-colors"
           >
-            <Heart className="w-4 h-4 fill-sky-400 text-sky-500 group-hover:scale-125 transition-transform" />
+            <Heart className="w-4 h-4 fill-sky-400 text-sky-500" />
             <span className="sr-only">{navbar.coupleLink.title}</span>
           </a>
 
           <a
             href={contact.cvPath}
-            download="CV_Yulti_Syaridayanti_SKM.pdf"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pastel-pink-500 to-pastel-rose-500 text-white text-xs font-bold shadow-md shadow-pastel-pink-400/30 hover:shadow-lg hover:shadow-pastel-pink-400/40 transition-all duration-200 hover-heartbeat"
+            download={contact.cvFileName}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-pastel-pink-600 hover:bg-pastel-pink-700 text-white text-xs font-bold shadow-sm transition-colors"
           >
             <FileDown className="w-3.5 h-3.5" />
             <span>{navbar.downloadCvBtn}</span>
           </a>
         </div>
 
-        <div className="flex sm:hidden items-center gap-2">
+        <div className="flex md:hidden items-center gap-2">
           <a
             href={navbar.coupleLink.url}
             target="_blank"
             rel="noopener noreferrer"
             title={navbar.coupleLink.title}
             aria-label={navbar.coupleLink.title}
-            className="w-9 h-9 rounded-full flex items-center justify-center bg-sky-50 text-sky-600 border border-sky-200/70"
+            className="w-9 h-9 rounded-lg flex items-center justify-center bg-sky-50 text-sky-600 border border-sky-200/70"
           >
             <Heart className="w-4 h-4 fill-sky-400 text-sky-500" />
             <span className="sr-only">{navbar.coupleLink.title}</span>
@@ -141,8 +141,8 @@ export const Navbar: React.FC = () => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Navigation Menu"
-            className="w-10 h-10 rounded-2xl bg-pastel-pink-100/80 text-pastel-pink-600 flex items-center justify-center border border-pastel-pink-200 focus:outline-none"
+            aria-label={navbar.toggleMenuAria}
+            className="w-9 h-9 rounded-lg bg-pastel-pink-100/80 text-pastel-pink-600 flex items-center justify-center border border-pastel-pink-200 focus:outline-none"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -181,12 +181,12 @@ export const Navbar: React.FC = () => {
             <div className="pt-2 border-t border-pastel-pink-200/60 mt-1">
               <a
                 href={contact.cvPath}
-                download="CV_Yulti_Syaridayanti_SKM.pdf"
+                download={contact.cvFileName}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-pastel-pink-500 to-pastel-rose-500 text-white text-xs font-bold shadow-md"
+                className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-pastel-pink-600 hover:bg-pastel-pink-700 text-white text-xs font-bold shadow-sm transition-colors"
               >
                 <FileDown className="w-4 h-4" />
-                <span>{navbar.downloadCvBtn} (.PDF)</span>
+                <span>{navbar.downloadCvBtn}</span>
               </a>
             </div>
           </div>

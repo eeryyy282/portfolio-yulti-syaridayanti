@@ -1,4 +1,5 @@
 import React from "react";
+import { siteContent } from "@/content";
 
 interface IllustrationProps {
   className?: string;
@@ -7,13 +8,15 @@ interface IllustrationProps {
 export const StorysetHealthIllustration: React.FC<IllustrationProps> = ({
   className = "w-full h-auto max-w-md",
 }) => {
+  const { ui } = siteContent;
+
   return (
     <svg
       viewBox="0 0 500 450"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Ilustrasi Promosi Kesehatan dan Edukasi Masyarakat"
+      aria-label={ui.illustrationAriaLabel}
     >
       <defs>
         <linearGradient id="pinkBlobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -125,27 +128,27 @@ export const StorysetHealthIllustration: React.FC<IllustrationProps> = ({
         <line x1="392" y1="305" x2="410" y2="305" stroke="#14B8A6" strokeWidth="2" strokeLinecap="round" />
       </g>
 
-      <g className="animate-soft-float">
-        <rect x="40" y="295" width="115" height="38" rx="19" fill="#FFFFFF" filter="url(#softShadow)" />
+      <g>
+        <rect x="40" y="295" width="115" height="38" rx="8" fill="#FFFFFF" stroke="#FCD5E1" strokeWidth="1.5" />
         <circle cx="60" cy="314" r="12" fill="#FEEBF0" />
         <path d="M56 314L59 317L65 311" stroke="#EC4E80" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         <text x="78" y="312" fill="#1E293B" fontSize="11" fontWeight="bold" fontFamily="sans-serif">
-          IPK 3.86
+          {ui.illustrationGpaTitle}
         </text>
         <text x="78" y="324" fill="#64748B" fontSize="8" fontWeight="500" fontFamily="sans-serif">
-          Cumlaude UNJA
+          {ui.illustrationGpaSubtitle}
         </text>
       </g>
 
-      <g className="animate-soft-float" style={{ animationDelay: "1.5s" }}>
-        <rect x="330" y="350" width="130" height="38" rx="19" fill="#FFFFFF" filter="url(#softShadow)" />
+      <g>
+        <rect x="330" y="350" width="130" height="38" rx="8" fill="#FFFFFF" stroke="#CCFBF1" strokeWidth="1.5" />
         <circle cx="350" cy="369" r="12" fill="#CCFBF1" />
         <path d="M350 363V375M344 369H356" stroke="#0D9488" strokeWidth="2.5" strokeLinecap="round" />
         <text x="368" y="367" fill="#1E293B" fontSize="11" fontWeight="bold" fontFamily="sans-serif">
-          Public Health
+          {ui.illustrationFieldTitle}
         </text>
         <text x="368" y="379" fill="#0D9488" fontSize="8" fontWeight="600" fontFamily="sans-serif">
-          Komunitas Sehat
+          {ui.illustrationFieldSubtitle}
         </text>
       </g>
     </svg>

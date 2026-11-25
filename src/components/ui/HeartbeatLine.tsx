@@ -37,7 +37,7 @@ export const HeartbeatLine: React.FC<HeartbeatLineProps> = ({
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="animate-pulse"
+            className="animate-ekg-flow"
           />
 
           <defs>
@@ -52,14 +52,14 @@ export const HeartbeatLine: React.FC<HeartbeatLineProps> = ({
         </svg>
 
         {withHeart && (
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-pastel-pink-50 px-3.5 py-1 rounded-full border border-pastel-pink-200 shadow-sm flex items-center gap-1.5 animate-heartbeat z-10">
+          <div className="absolute left-1/2 top-1/2 bg-white px-3.5 py-1.5 rounded-lg border border-pastel-pink-200 shadow-sm flex items-center gap-1.5 animate-pulse-beat z-10">
             <svg
-              className="w-4 h-4 text-pastel-pink-500 fill-pastel-pink-500"
+              className="w-4 h-4 text-pastel-pink-600 fill-pastel-pink-600"
               viewBox="0 0 24 24"
             >
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
-            <span className="text-[11px] font-bold text-pastel-pink-600 tracking-wider uppercase">
+            <span className="text-xs font-semibold text-pastel-pink-600">
               {ui.heartbeatBadge}
             </span>
           </div>

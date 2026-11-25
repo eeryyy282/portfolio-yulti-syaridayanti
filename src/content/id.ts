@@ -31,9 +31,11 @@ export const idContent: PortfolioContent = {
 
   navbar: {
     brandName: "Yulti Syaridayanti",
+    brandInitials: "YS",
     brandDegree: "S.K.M.",
     brandRole: "Public Health",
     downloadCvBtn: "Unduh CV",
+    toggleMenuAria: "Buka atau tutup menu navigasi",
     navItems: [
       { id: "hero", label: "Beranda", href: "#hero" },
       { id: "about", label: "Tentang", href: "#about" },
@@ -43,7 +45,7 @@ export const idContent: PortfolioContent = {
       { id: "contact", label: "Kontak", href: "#contact" },
     ],
     coupleLink: {
-      title: "Kunjungi Portofolio Muhammad Juzairi Safitli 💙",
+      title: "Kunjungi Portofolio Muhammad Juzairi Safitli",
       url: "https://portfolio-juzairi-safitli.vercel.app/",
       partnerName: "Muhammad Juzairi Safitli",
     },
@@ -215,7 +217,7 @@ export const idContent: PortfolioContent = {
         },
       },
       {
-        id: "pemberdayaan-sad",
+        id: "sad-empowerment",
         title: "GEMPITA SAD FKIK Universitas Jambi (Pengabdian Suku Anak Dalam)",
         role: "Fasilitator Kesehatan Masyarakat",
         period: "November 2022",
@@ -337,12 +339,15 @@ export const idContent: PortfolioContent = {
       "Apabila Anda membutuhkan rekan untuk berdiskusi, berkolaborasi dalam tata kelola administrasi kesehatan, manajemen data, atau peluang profesional lainnya, jangan ragu untuk menghubungi saya.",
     emailTitle: "Alamat Email",
     emailValue: "yultisyaridayanti@gmail.com",
+    copyEmailTooltip: "Salin alamat email",
     copySuccessMessage: "Alamat email berhasil disalin!",
+    copyErrorMessage: "Gagal menyalin alamat email secara otomatis",
     phoneTitle: "Telepon / WhatsApp",
     phoneValue: "+6282258540657",
     chatWhatsAppBtn: "Hubungi via WA",
     whatsAppUrl:
       "https://wa.me/6282258540657?text=Halo%20Yulti%2C%20saya%20tertarik%20untuk%20berdiskusi%20lebih%20lanjut%20mengenai%20peluang%20profesional%20atau%20kolaborasi%20kesehatan%20masyarakat",
+    whatsAppBaseUrl: "https://wa.me/6282258540657",
     locationTitle: "Domisili",
     locationValue: "Jambi, Indonesia",
     cvCardTitle: "Unduh Dokumen CV",
@@ -350,9 +355,10 @@ export const idContent: PortfolioContent = {
       "Anda dapat mengunduh dokumen resume (CV) lengkap saya melalui tautan berikut.",
     cvCardBtn: "Unduh CV (.PDF)",
     cvPath: "/cv/CV_Yulti_Syaridayanti.pdf",
-    formTitle: "Formulir Kontak",
+    cvFileName: "CV_Yulti_Syaridayanti_SKM.pdf",
+    formTitle: "Kirim Pesan Langsung",
     formSubtitle:
-      "Silakan isi formulir di bawah ini. Pesan Anda akan langsung diteruskan ke alamat email saya.",
+      "Isi detail pesan di bawah ini lalu lanjutkan langsung melalui WhatsApp atau aplikasi Email Anda.",
     nameLabel: "Nama Lengkap / Instansi",
     namePlaceholder: "Contoh: dr. Amanda / HR Puskesmas",
     emailLabel: "Alamat Email Anda",
@@ -361,11 +367,13 @@ export const idContent: PortfolioContent = {
     subjectPlaceholder: "Tawaran Pekerjaan / Kolaborasi Administrasi Kesehatan",
     messageLabel: "Isi Pesan",
     messagePlaceholder: "Tuliskan rincian pesan yang ingin Anda sampaikan di sini...",
-    submitBtn: "Kirim Pesan Sekarang",
-    successTitle: "Pesan Berhasil Terkirim!",
-    successMessageTemplate: (name: string, email: string) =>
-      `Terima kasih, ${name}. Pesan Anda telah saya terima dan akan segera saya tanggapi melalui email (${email}) dalam waktu maksimal 1x24 jam.`,
-    sendAnotherBtn: "Kirim Pesan Lainnya",
+    sendViaWhatsAppBtn: "Kirim via WhatsApp",
+    sendViaEmailBtn: "Kirim via Email",
+    defaultSubject: "Pesan dari Portofolio Yulti Syaridayanti",
+    defaultMessageBody:
+      "Halo Yulti, saya tertarik untuk berdiskusi lebih lanjut mengenai peluang profesional atau kolaborasi.",
+    mailtoBodyTemplate: (name: string, email: string, message: string) =>
+      `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
   },
 
   footer: {
@@ -394,5 +402,10 @@ export const idContent: PortfolioContent = {
     avatarBadgeStudyTime: "3.5 Tahun Lulus",
     avatarBadgeField: "Promosi Kesehatan & Ilmu Perilaku",
     avatarBadgeSubField: "Advokasi Komunitas",
+    illustrationAriaLabel: "Ilustrasi Promosi Kesehatan dan Edukasi Masyarakat",
+    illustrationGpaTitle: "IPK 3.86",
+    illustrationGpaSubtitle: "Cumlaude UNJA",
+    illustrationFieldTitle: "Public Health",
+    illustrationFieldSubtitle: "Komunitas Sehat",
   },
 };

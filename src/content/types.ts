@@ -65,9 +65,11 @@ export interface PortfolioContent {
   };
   navbar: {
     brandName: string;
+    brandInitials: string;
     brandDegree: string;
     brandRole: string;
     downloadCvBtn: string;
+    toggleMenuAria: string;
     navItems: NavItem[];
     coupleLink: {
       title: string;
@@ -136,17 +138,21 @@ export interface PortfolioContent {
     subtitle: string;
     emailTitle: string;
     emailValue: string;
+    copyEmailTooltip: string;
     copySuccessMessage: string;
+    copyErrorMessage: string;
     phoneTitle: string;
     phoneValue: string;
     chatWhatsAppBtn: string;
     whatsAppUrl: string;
+    whatsAppBaseUrl: string;
     locationTitle: string;
     locationValue: string;
     cvCardTitle: string;
     cvCardDesc: string;
     cvCardBtn: string;
     cvPath: string;
+    cvFileName: string;
     formTitle: string;
     formSubtitle: string;
     nameLabel: string;
@@ -157,10 +163,11 @@ export interface PortfolioContent {
     subjectPlaceholder: string;
     messageLabel: string;
     messagePlaceholder: string;
-    submitBtn: string;
-    successTitle: string;
-    successMessageTemplate: (name: string, email: string) => string;
-    sendAnotherBtn: string;
+    sendViaWhatsAppBtn: string;
+    sendViaEmailBtn: string;
+    defaultSubject: string;
+    defaultMessageBody: string;
+    mailtoBodyTemplate: (name: string, email: string, message: string) => string;
   };
   footer: {
     brandName: string;
@@ -186,6 +193,11 @@ export interface PortfolioContent {
     avatarBadgeStudyTime: string;
     avatarBadgeField: string;
     avatarBadgeSubField: string;
+    illustrationAriaLabel: string;
+    illustrationGpaTitle: string;
+    illustrationGpaSubtitle: string;
+    illustrationFieldTitle: string;
+    illustrationFieldSubtitle: string;
   };
 }
 

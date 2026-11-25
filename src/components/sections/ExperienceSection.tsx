@@ -1,14 +1,11 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
-  Briefcase,
   MapPin,
   Calendar,
   CheckCircle2,
   Building2,
-  Sparkles,
 } from "lucide-react";
 import { siteContent } from "@/content";
 
@@ -18,12 +15,11 @@ export const ExperienceSection: React.FC = () => {
   return (
     <section id="experience" className="py-20 relative bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-pink-100 text-pastel-pink-700 text-xs font-bold mb-3">
-            <Briefcase className="w-3.5 h-3.5" />
-            <span>{experience.badge}</span>
-          </div>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-pastel-slate-900 tracking-tight mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-14 space-y-2">
+          <p className="text-xs font-semibold text-pastel-pink-600">
+            {experience.badge}
+          </p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-pastel-slate-900 tracking-tight">
             {experience.title}
           </h2>
           <p className="text-sm sm:text-base text-pastel-slate-600">
@@ -32,23 +28,13 @@ export const ExperienceSection: React.FC = () => {
         </div>
 
         <div className="relative">
-          {/* Medical Infusion / Thermometer connector line */}
+          {/* Connector line */}
           <div
             aria-hidden="true"
-            className="absolute left-4 sm:left-1/2 top-1 bottom-1 w-1 -translate-x-1/2 bg-gradient-to-b from-pastel-pink-400 via-pastel-rose-300 to-pastel-pink-300 rounded-full"
-          />
-          {/* Top drip chamber accent */}
-          <div
-            aria-hidden="true"
-            className="absolute left-4 sm:left-1/2 -top-1 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-pastel-pink-500 border-2 border-white shadow-xs"
-          />
-          {/* Bottom thermometer reservoir bulb */}
-          <div
-            aria-hidden="true"
-            className="absolute left-4 sm:left-1/2 -bottom-1 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-pastel-pink-500 to-pastel-rose-400 border-2 border-white shadow-sm"
+            className="absolute left-4 sm:left-1/2 top-1 bottom-1 w-0.5 -translate-x-1/2 bg-pastel-pink-200"
           />
 
-          <div className="space-y-12">
+          <div className="space-y-10">
             {experience.items.map((exp, idx) => {
               const isEven = idx % 2 === 0;
               return (
@@ -58,32 +44,27 @@ export const ExperienceSection: React.FC = () => {
                     isEven ? "sm:flex-row-reverse" : ""
                   }`}
                 >
-                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-1.5 z-10 w-9 h-9 rounded-2xl bg-white border-2 border-pastel-pink-400 shadow-md flex items-center justify-center text-pastel-pink-600 group-hover:scale-110 transition-transform">
+                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-1.5 z-10 w-8 h-8 rounded-lg bg-white border-2 border-pastel-pink-400 shadow-sm flex items-center justify-center text-pastel-pink-600">
                     <Building2 className="w-4 h-4" />
                   </div>
 
                   <div className="hidden sm:block w-1/2" />
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  <div
                     className={`pl-12 sm:pl-0 w-full sm:w-1/2 ${
                       isEven ? "sm:pr-10" : "sm:pl-10"
                     }`}
                   >
-                    <div className="bg-gradient-to-b from-pastel-pink-50/50 to-white p-6 rounded-3xl border border-pastel-pink-200/80 shadow-sm hover:shadow-md hover:border-pastel-pink-300 transition-all">
+                    <div className="bg-white p-6 rounded-xl border border-pastel-pink-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:border-pastel-pink-300 transition-all duration-200">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-pink-100 text-pastel-pink-700 font-bold text-xs">
+                        <span className="inline-flex items-center gap-1.5 text-pastel-pink-600 font-semibold text-xs">
                           <Calendar className="w-3.5 h-3.5" />
                           <span>{exp.period}</span>
                         </span>
 
                         {exp.badge && (
-                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-pastel-rose-500 text-white font-bold text-[10px] animate-pulse">
-                            <Sparkles className="w-3 h-3" />
-                            <span>{exp.badge}</span>
+                          <span className="px-2.5 py-0.5 rounded-md bg-pastel-pink-50 border border-pastel-pink-200 text-pastel-pink-700 font-semibold text-xs">
+                            {exp.badge}
                           </span>
                         )}
                       </div>
@@ -113,14 +94,14 @@ export const ExperienceSection: React.FC = () => {
                         {exp.tags.map((tag, tIdx) => (
                           <span
                             key={tIdx}
-                            className="px-2.5 py-1 rounded-lg bg-white border border-pastel-pink-200 text-pastel-slate-700 text-[11px] font-medium"
+                            className="px-2.5 py-1 rounded-md bg-pastel-cream-50 border border-pastel-pink-200 text-pastel-slate-700 text-xs font-medium"
                           >
-                            #{tag}
+                            {tag}
                           </span>
                         ))}
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               );
             })}
